@@ -5,7 +5,8 @@
 
 <!-- creates an h3 element where the link leads to the product name + details -->
   <h3>
-    <a [title]="product.name + ' details'">{{ product.name }}</a>
+    <a [title]="product.name + ' details'"
+        [routerLink]="['/products', product.id]">{{ product.name }}</a>
   </h3>
 
 <!-- if product has a description it will appear underneath in a p element -->
@@ -15,7 +16,7 @@
   <button type="button" (click)="share()">Share</button>
 
   <app-product-alerts
-  [product]="product" 
+  [product]="product"  
   (notify)="onNotify()">
   </app-product-alerts>
 
